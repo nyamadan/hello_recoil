@@ -1,0 +1,19 @@
+scalar DateTime
+scalar TodoStatus
+
+type Query {
+  getTodo(id: String!): Todo
+  getTodoList: [Todo!]!
+}
+
+type Mutation {
+  addTodo(text: String!): Todo
+  updateTodo(id: String!, text: String, status: TodoStatus): Todo
+}
+
+type Todo {
+  id: String!
+  text: String!
+  status: TodoStatus!
+  createdAt: DateTime!
+}

@@ -1,0 +1,12 @@
+overwrite: true
+generates:
+  ./src/types/generated/graphql.ts:
+    schema: schema.graphql
+    config:
+      useIndexSignature: true
+      scalars:
+        DateTime: string
+        TodoStatus: '"OPEN" | "PROGRESS" | "CLOSE"'
+    plugins:
+      - typescript
+      - typescript-resolvers
